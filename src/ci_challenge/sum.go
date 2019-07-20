@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 	"math"
 )
 
@@ -19,5 +19,8 @@ func soma( ) string {
 
 func main() {
 
-	fmt.Println(soma())
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(soma()))
+	})
+	http.ListenAndServe(":8000", nil)
 }
