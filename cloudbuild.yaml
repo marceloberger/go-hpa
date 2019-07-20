@@ -10,7 +10,7 @@ steps:
   args: ['test', '-v','./...']
   env: ['GOPATH=.']
 
-- id: 'Fazendo o push da Imagem Para o Cloud Registry'
+- id: 'Fazendo o push da Imagem Para o Cloud Registry agora'
   name: 'gcr.io/cloud-builders/docker'
   args:
     - 'build'
